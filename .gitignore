@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+
+# Data / indexes (demo artifacts)
+data/mmrag/
+*.faiss
+*.index
+*.bin
+*.pt
+*.pth
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
