@@ -6,7 +6,7 @@ import gradio as gr
 import requests
 
 API_BASE = os.getenv("API_BASE", "http://127.0.0.1:3001")
-REQUEST_TIMEOUT = 120  # seconds (model inference can be slow)
+REQUEST_TIMEOUT = 600  # seconds (10 minutes for CPU inference)
 
 # Demo limits (should match pipeline.py)
 MAX_PAGES = 100
@@ -144,7 +144,7 @@ with gr.Blocks(title="Local Page-First MMRAG", theme=gr.themes.Soft()) as demo:
     # Chat section
     gr.Markdown("## 💬 Ask Questions")
     q = gr.Textbox(label="Question", placeholder="What does this document say about...?")
-    top_k = gr.Slider(minimum=1, maximum=8, value=3, step=1, label="Top-K Evidence Pages")
+    top_k = gr.Slider(minimum=1, maximum=8, value=1, step=1, label="Top-K Evidence Pages")
 
     ask_btn = gr.Button("Ask", variant="primary")
     answer_box = gr.Textbox(label="Answer", lines=8, interactive=False)
